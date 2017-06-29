@@ -49,10 +49,31 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="t8i-38-1uR" secondAttribute="bottom" id="ynX-xp-ryh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="vI0-e6-5r9" kind="show" identifier="taskSegue" id="avv-3Z-Nx1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+        </scene>
+        <!--Task View Controller-->
+        <scene sceneID="9pg-2u-sc9">
+            <objects>
+                <viewController id="vI0-e6-5r9" customClass="TaskViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xOv-e2-JkX"/>
+                        <viewControllerLayoutGuide type="bottom" id="40b-4W-Jjg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0kc-v2-6PC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KDe-cE-6Eo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1062" y="123"/>
         </scene>
     </scenes>
 </document>

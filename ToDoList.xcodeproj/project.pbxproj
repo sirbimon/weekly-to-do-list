@@ -15,6 +15,7 @@
 		7B03656A1F0582860046D6A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B0365681F0582860046D6A4 /* LaunchScreen.storyboard */; };
 		7B0365751F0582860046D6A4 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0365741F0582860046D6A4 /* ToDoListTests.swift */; };
 		7B70347A1F05935F00C768B7 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7034791F05935F00C768B7 /* Day.swift */; };
+		7B70347C1F05941200C768B7 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70347B1F05941200C768B7 /* TaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		7B0365741F0582860046D6A4 /* ToDoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTests.swift; sourceTree = "<group>"; };
 		7B0365761F0582860046D6A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B7034791F05935F00C768B7 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		7B70347B1F05941200C768B7 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				7B03655C1F0582860046D6A4 /* AppDelegate.swift */,
 				7B03655E1F0582860046D6A4 /* WeeklyViewController.swift */,
 				7B0365601F0582860046D6A4 /* Main.storyboard */,
+				7B70347B1F05941200C768B7 /* TaskViewController.swift */,
 				7B0365661F0582860046D6A4 /* Assets.xcassets */,
 				7B0365681F0582860046D6A4 /* LaunchScreen.storyboard */,
 				7B03656B1F0582860046D6A4 /* Info.plist */,
@@ -233,6 +236,7 @@
 			files = (
 				7B03655F1F0582860046D6A4 /* WeeklyViewController.swift in Sources */,
 				7B0365651F0582860046D6A4 /* ToDoList.xcdatamodeld in Sources */,
+				7B70347C1F05941200C768B7 /* TaskViewController.swift in Sources */,
 				7B03655D1F0582860046D6A4 /* AppDelegate.swift in Sources */,
 				7B70347A1F05935F00C768B7 /* Day.swift in Sources */,
 			);
