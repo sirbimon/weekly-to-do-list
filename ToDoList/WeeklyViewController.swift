@@ -25,6 +25,14 @@ extension WeeklyViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return days.count
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? TaskViewController {
+            let indexPath = sender as! IndexPath
+            print(indexPath)
+
+        }
+    }
 }
 
 extension WeeklyViewController: UITableViewDelegate {
@@ -32,5 +40,10 @@ extension WeeklyViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.frame.height/CGFloat(days.count)
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "taskSegue", sender: indexPath)
+    }
+
 }
 
