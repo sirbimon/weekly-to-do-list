@@ -27,3 +27,10 @@ extension WeeklyViewController: UITableViewDataSource {
     }
 }
 
+extension WeeklyViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.frame.height/CGFloat(days.count)
+    }
+}
+
