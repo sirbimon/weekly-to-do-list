@@ -27,3 +27,19 @@ class Item {
         self.description = description
     }
 }
+
+class Week {
+    
+    static let sharedInstance = Week()
+    
+    var daysOfTheWeek: [Day] = [
+        Day(day: "Monday"),
+        Day(day: "Tuesday"),
+        Day(day: "Wednesday"),
+        Day(day: "Thursday"),
+        Day(day: "Friday"),
+        Day(day: "Saturday"),
+        Day(day: "Sunday")
+    ]
+    
+}
