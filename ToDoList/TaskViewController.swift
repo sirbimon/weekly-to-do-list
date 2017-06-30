@@ -16,8 +16,7 @@ class TaskViewController: UIViewController {
     }
     
     func setupRefresh() {
-        refreshControl.addTarget(nil, action: #selector(refreshInitiated), for: .allTouchEvents)
-        //refreshControl.backgroundColor = .red
+        refreshControl.addTarget(nil, action: #selector(refreshInitiated), for: .valueChanged)
         refreshControl.tintColor = .white
         tableView.addSubview(refreshControl)
     }
@@ -25,16 +24,21 @@ class TaskViewController: UIViewController {
     func setupInputTaskView() {
         refreshControl.addSubview(inputTaskView)
         inputTaskView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: (refreshControl.frame.height))
-        //inputTaskView.taskTextLable.addTarget(nil, action: #selector(finishCreatingTask), for: .editingDidEndOnExit)
+        inputTaskView.addTaskButton.addTarget(self, action: #selector(finishCreatingTask), for: .touchDown)
     }
     
     func refreshInitiated() {
-        
+        print("pull refresh control")
+        inputTaskView.taskTextLable.text = ""
+        inputTaskView.layer.opacity = 1.0
     }
     
     func finishCreatingTask() {
-        print(inputTaskView.taskTextLable.text)
-        refreshControl.endRefreshing()
+        if let task = inputTaskView.taskTextLable.text, task != "" {
+            print(task)
+            inputTaskView.layer.opacity = 0.0
+            refreshControl.endRefreshing()
+        }
     }
 
 }

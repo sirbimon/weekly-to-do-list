@@ -11,6 +11,7 @@ import UIKit
 class InputTaskView: UIView {
  
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var addTaskButton: UIButton!
     @IBOutlet weak var taskTextLable: UITextField!
     
     required init?(coder aDecoder: NSCoder) {
