@@ -15,22 +15,23 @@ class InputTaskView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
+        setupView()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupView()
     }
     
     
     func setupView() {
         Bundle.main.loadNibNamed("InputTaskView", owner: self, options: nil)
-        self.addSubview(contentView)
+        addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.topAnchor.constraint(equalTo: self.topAnchor)
-        contentView.leftAnchor.constraint(equalTo: self.leftAnchor)
-        contentView.rightAnchor.constraint(equalTo: self.rightAnchor)
-        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     
 }

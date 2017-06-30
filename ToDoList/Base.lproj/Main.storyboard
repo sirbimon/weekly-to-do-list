@@ -61,7 +61,7 @@
         <!--Task View Controller-->
         <scene sceneID="9pg-2u-sc9">
             <objects>
-                <viewController id="vI0-e6-5r9" customClass="TaskViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vI0-e6-5r9" customClass="TaskViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xOv-e2-JkX"/>
                         <viewControllerLayoutGuide type="bottom" id="40b-4W-Jjg"/>
@@ -91,6 +91,9 @@
                         <barButtonItem systemItem="add" id="78M-ON-zZS"/>
                     </toolbarItems>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="Nzf-QE-vbA" id="2aE-bf-XPd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDe-cE-6Eo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
