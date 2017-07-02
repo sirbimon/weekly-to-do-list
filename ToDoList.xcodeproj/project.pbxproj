@@ -16,6 +16,7 @@
 		7B0365751F0582860046D6A4 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0365741F0582860046D6A4 /* ToDoListTests.swift */; };
 		7B70347A1F05935F00C768B7 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7034791F05935F00C768B7 /* Day.swift */; };
 		7B70347C1F05941200C768B7 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70347B1F05941200C768B7 /* TaskViewController.swift */; };
+		7B70347E1F097C4E00C768B7 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70347D1F097C4E00C768B7 /* DataStore.swift */; };
 		E7C9AF041F06E7BE00415897 /* InputTaskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C9AF031F06E7BE00415897 /* InputTaskView.xib */; };
 		E7C9AF061F06E7CB00415897 /* InputTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C9AF051F06E7CB00415897 /* InputTaskView.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		7B0365761F0582860046D6A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B7034791F05935F00C768B7 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		7B70347B1F05941200C768B7 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		7B70347D1F097C4E00C768B7 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		E7C9AF031F06E7BE00415897 /* InputTaskView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputTaskView.xib; sourceTree = "<group>"; };
 		E7C9AF051F06E7CB00415897 /* InputTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				7B7034791F05935F00C768B7 /* Day.swift */,
+				7B70347D1F097C4E00C768B7 /* DataStore.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B70347E1F097C4E00C768B7 /* DataStore.swift in Sources */,
 				E7C9AF061F06E7CB00415897 /* InputTaskView.swift in Sources */,
 				7B03655F1F0582860046D6A4 /* WeeklyViewController.swift in Sources */,
 				7B0365651F0582860046D6A4 /* ToDoList.xcdatamodeld in Sources */,
