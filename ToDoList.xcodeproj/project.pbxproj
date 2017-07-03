@@ -10,13 +10,13 @@
 		7B03655D1F0582860046D6A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03655C1F0582860046D6A4 /* AppDelegate.swift */; };
 		7B03655F1F0582860046D6A4 /* WeeklyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03655E1F0582860046D6A4 /* WeeklyViewController.swift */; };
 		7B0365621F0582860046D6A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B0365601F0582860046D6A4 /* Main.storyboard */; };
-		7B0365651F0582860046D6A4 /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B0365631F0582860046D6A4 /* ToDoList.xcdatamodeld */; };
 		7B0365671F0582860046D6A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B0365661F0582860046D6A4 /* Assets.xcassets */; };
 		7B03656A1F0582860046D6A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B0365681F0582860046D6A4 /* LaunchScreen.storyboard */; };
 		7B0365751F0582860046D6A4 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0365741F0582860046D6A4 /* ToDoListTests.swift */; };
 		7B70347A1F05935F00C768B7 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7034791F05935F00C768B7 /* Day.swift */; };
 		7B70347C1F05941200C768B7 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70347B1F05941200C768B7 /* TaskViewController.swift */; };
 		7B70347E1F097C4E00C768B7 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70347D1F097C4E00C768B7 /* DataStore.swift */; };
+		7B7034811F09AE0300C768B7 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B70347F1F09AE0300C768B7 /* DataModel.xcdatamodeld */; };
 		E7C9AF041F06E7BE00415897 /* InputTaskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C9AF031F06E7BE00415897 /* InputTaskView.xib */; };
 		E7C9AF061F06E7CB00415897 /* InputTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C9AF051F06E7CB00415897 /* InputTaskView.swift */; };
 /* End PBXBuildFile section */
@@ -36,7 +36,6 @@
 		7B03655C1F0582860046D6A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B03655E1F0582860046D6A4 /* WeeklyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyViewController.swift; sourceTree = "<group>"; };
 		7B0365611F0582860046D6A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7B0365641F0582860046D6A4 /* ToDoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoList.xcdatamodel; sourceTree = "<group>"; };
 		7B0365661F0582860046D6A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B0365691F0582860046D6A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B03656B1F0582860046D6A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -46,6 +45,7 @@
 		7B7034791F05935F00C768B7 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		7B70347B1F05941200C768B7 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		7B70347D1F097C4E00C768B7 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		7B7034801F09AE0300C768B7 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		E7C9AF031F06E7BE00415897 /* InputTaskView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputTaskView.xib; sourceTree = "<group>"; };
 		E7C9AF051F06E7CB00415897 /* InputTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,7 +98,6 @@
 				7B0365661F0582860046D6A4 /* Assets.xcassets */,
 				7B0365681F0582860046D6A4 /* LaunchScreen.storyboard */,
 				7B03656B1F0582860046D6A4 /* Info.plist */,
-				7B0365631F0582860046D6A4 /* ToDoList.xcdatamodeld */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -124,6 +123,7 @@
 			children = (
 				7B7034791F05935F00C768B7 /* Day.swift */,
 				7B70347D1F097C4E00C768B7 /* DataStore.swift */,
+				7B70347F1F09AE0300C768B7 /* DataModel.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 				7B70347E1F097C4E00C768B7 /* DataStore.swift in Sources */,
 				E7C9AF061F06E7CB00415897 /* InputTaskView.swift in Sources */,
 				7B03655F1F0582860046D6A4 /* WeeklyViewController.swift in Sources */,
-				7B0365651F0582860046D6A4 /* ToDoList.xcdatamodeld in Sources */,
+				7B7034811F09AE0300C768B7 /* DataModel.xcdatamodeld in Sources */,
 				7B70347C1F05941200C768B7 /* TaskViewController.swift in Sources */,
 				7B03655D1F0582860046D6A4 /* AppDelegate.swift in Sources */,
 				7B70347A1F05935F00C768B7 /* Day.swift in Sources */,
@@ -484,13 +484,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		7B0365631F0582860046D6A4 /* ToDoList.xcdatamodeld */ = {
+		7B70347F1F09AE0300C768B7 /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				7B0365641F0582860046D6A4 /* ToDoList.xcdatamodel */,
+				7B7034801F09AE0300C768B7 /* DataModel.xcdatamodel */,
 			);
-			currentVersion = 7B0365641F0582860046D6A4 /* ToDoList.xcdatamodel */;
-			path = ToDoList.xcdatamodeld;
+			currentVersion = 7B7034801F09AE0300C768B7 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
