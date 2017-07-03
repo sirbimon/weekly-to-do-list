@@ -2,8 +2,6 @@ import Foundation
 import CoreData
 
 class DataStore {
-
-//    let week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     var days = [Day]()
     var items = [Item]()
 
