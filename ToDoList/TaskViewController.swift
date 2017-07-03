@@ -40,8 +40,6 @@ class TaskViewController: UIViewController {
     }
     
     @objc func finishCreatingTask() {
-        if inputTaskView.addTaskButton.isSelected {
-
         let context  = store.persistentContainer.viewContext
         let firstItem = Item(context: context)
         if let task = inputTaskView.taskTextLable.text, task != "" {
@@ -51,8 +49,8 @@ class TaskViewController: UIViewController {
             refreshControl.endRefreshing()
         }
         store.saveContext()
+        print("context has saved")
         self.dismiss(animated: true, completion: nil)
-    }
     }
 
 

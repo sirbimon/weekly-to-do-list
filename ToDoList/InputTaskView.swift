@@ -6,7 +6,6 @@ class InputTaskView: UIView {
     @IBOutlet weak var addTaskButton: UIButton!
     @IBOutlet weak var taskTextLable: UITextField!
     let store = DataStore.sharedInstance
-    var currentDay: Day?
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -29,10 +28,6 @@ class InputTaskView: UIView {
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
 
-    func addTask() {
-        if addTaskButton.isSelected {
-        }
-    }
     
 }
 
