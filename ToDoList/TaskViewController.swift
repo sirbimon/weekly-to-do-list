@@ -15,6 +15,7 @@ class TaskViewController: UIViewController {
         super.viewDidLoad()
         setupRefresh()
         setupInputTaskView()
+        setupGradientBG()
     }
 
 
@@ -26,8 +27,14 @@ class TaskViewController: UIViewController {
     
     func setupRefresh() {
         refreshControl.addTarget(nil, action: #selector(refreshInitiated), for: .valueChanged)
-        refreshControl.tintColor = .white
+        refreshControl.tintColor = .clear
         tableView.addSubview(refreshControl)
+    }
+    
+    @objc func refreshInitiated() {
+        print("pull refresh control")
+        inputTaskView.taskTextLable.text = ""
+        inputTaskView.layer.opacity = 1.0
     }
     
     func setupInputTaskView() {
@@ -36,11 +43,16 @@ class TaskViewController: UIViewController {
         inputTaskView.addTaskButton.addTarget(self, action: #selector(finishCreatingTask), for: .touchDown)
     }
     
-    @objc func refreshInitiated() {
-        print("pull refresh control")
-        inputTaskView.taskTextLable.text = ""
-        inputTaskView.layer.opacity = 1.0
+    func setupGradientBG() {
+        let newLayer = CAGradientLayer()
+        print("setupgradientBG")
+        let pink = UIColor(hex: 0xFFA3A3)
+        let purple = UIColor(hex: 0xA3AEFB)
+        newLayer.colors = [purple.cgColor, pink.cgColor]
+        newLayer.frame = view.frame
+        view.layer.insertSublayer(newLayer, at: 0)
     }
+    
     
     @objc func finishCreatingTask() {
         let context  = store.persistentContainer.viewContext
@@ -58,13 +70,13 @@ class TaskViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 
-
 }
 
 extension TaskViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
         cell.textLabel?.text = tasks[indexPath.row]
+        cell.textLabel?.textColor = UIColor.white
         return cell
     }
     

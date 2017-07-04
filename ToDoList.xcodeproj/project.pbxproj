@@ -17,6 +17,9 @@
 		7B70347C1F05941200C768B7 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70347B1F05941200C768B7 /* TaskViewController.swift */; };
 		7B70347E1F097C4E00C768B7 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70347D1F097C4E00C768B7 /* DataStore.swift */; };
 		7B7034811F09AE0300C768B7 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B70347F1F09AE0300C768B7 /* DataModel.xcdatamodeld */; };
+		E735FF0F1F0C0B3B00F542D1 /* DayCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E735FF0E1F0C0B3B00F542D1 /* DayCellView.xib */; };
+		E735FF111F0C0B8900F542D1 /* DayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735FF101F0C0B8900F542D1 /* DayCellView.swift */; };
+		E735FF141F0C2CF800F542D1 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735FF131F0C2CF800F542D1 /* UIColorExt.swift */; };
 		E7C9AF041F06E7BE00415897 /* InputTaskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C9AF031F06E7BE00415897 /* InputTaskView.xib */; };
 		E7C9AF061F06E7CB00415897 /* InputTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C9AF051F06E7CB00415897 /* InputTaskView.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +49,9 @@
 		7B70347B1F05941200C768B7 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		7B70347D1F097C4E00C768B7 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		7B7034801F09AE0300C768B7 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		E735FF0E1F0C0B3B00F542D1 /* DayCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayCellView.xib; sourceTree = "<group>"; };
+		E735FF101F0C0B8900F542D1 /* DayCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCellView.swift; sourceTree = "<group>"; };
+		E735FF131F0C2CF800F542D1 /* UIColorExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		E7C9AF031F06E7BE00415897 /* InputTaskView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputTaskView.xib; sourceTree = "<group>"; };
 		E7C9AF051F06E7CB00415897 /* InputTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +95,7 @@
 		7B03655B1F0582860046D6A4 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				E735FF121F0C2CE200F542D1 /* Extensions */,
 				E7C9AF021F06E7A400415897 /* Xib */,
 				7B0365811F05832F0046D6A4 /* View */,
 				7B0365801F0583260046D6A4 /* Model */,
@@ -133,15 +140,25 @@
 			children = (
 				7B70347B1F05941200C768B7 /* TaskViewController.swift */,
 				E7C9AF051F06E7CB00415897 /* InputTaskView.swift */,
+				E735FF101F0C0B8900F542D1 /* DayCellView.swift */,
 				7B03655E1F0582860046D6A4 /* WeeklyViewController.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		E735FF121F0C2CE200F542D1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E735FF131F0C2CF800F542D1 /* UIColorExt.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		E7C9AF021F06E7A400415897 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
 				E7C9AF031F06E7BE00415897 /* InputTaskView.xib */,
+				E735FF0E1F0C0B3B00F542D1 /* DayCellView.xib */,
 			);
 			name = Xib;
 			sourceTree = "<group>";
@@ -234,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7C9AF041F06E7BE00415897 /* InputTaskView.xib in Resources */,
+				E735FF0F1F0C0B3B00F542D1 /* DayCellView.xib in Resources */,
 				7B03656A1F0582860046D6A4 /* LaunchScreen.storyboard in Resources */,
 				7B0365671F0582860046D6A4 /* Assets.xcassets in Resources */,
 				7B0365621F0582860046D6A4 /* Main.storyboard in Resources */,
@@ -258,7 +276,9 @@
 				E7C9AF061F06E7CB00415897 /* InputTaskView.swift in Sources */,
 				7B03655F1F0582860046D6A4 /* WeeklyViewController.swift in Sources */,
 				7B7034811F09AE0300C768B7 /* DataModel.xcdatamodeld in Sources */,
+				E735FF141F0C2CF800F542D1 /* UIColorExt.swift in Sources */,
 				7B70347C1F05941200C768B7 /* TaskViewController.swift in Sources */,
+				E735FF111F0C0B8900F542D1 /* DayCellView.swift in Sources */,
 				7B03655D1F0582860046D6A4 /* AppDelegate.swift in Sources */,
 				7B70347A1F05935F00C768B7 /* Day.swift in Sources */,
 			);
@@ -436,7 +456,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.SejanMiah.ToDoListTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToDoList.app/ToDoList";
 			};
 			name = Debug;
@@ -452,7 +472,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.SejanMiah.ToDoListTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToDoList.app/ToDoList";
 			};
 			name = Release;

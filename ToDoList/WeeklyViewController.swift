@@ -10,10 +10,21 @@ class WeeklyViewController: UIViewController {
         if self.store.days.isEmpty{
             self.store.generateData()
         }
+        
+        
+        setupGradientBG()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    
+    func setupGradientBG() {
+        let newLayer = CAGradientLayer()
+        // I wanted to create a background for the tableview.
+        print("setupgradientBG")
+        let pink = UIColor(hex: 0xFFA3A3)
+        let purple = UIColor(hex: 0xA3AEFB)
+        newLayer.colors = [purple.cgColor, pink.cgColor]
+        newLayer.frame = view.frame
+        view.layer.insertSublayer(newLayer, at: 0)
     }
 
 }
@@ -21,8 +32,13 @@ class WeeklyViewController: UIViewController {
 extension WeeklyViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let view = DayCellView()
         let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath)
-        cell.textLabel?.text = self.store.days[indexPath.row].name
+        cell.contentView.addSubview(view)
+        view.frame = cell.contentView.frame
+        view.dayLabel?.text = self.store.days[indexPath.row].name
+        
+        cell.selectionStyle = .none
         return cell
     }
 
@@ -49,5 +65,7 @@ extension WeeklyViewController: UITableViewDelegate {
         performSegue(withIdentifier: "taskSegue", sender: indexPath)
     }
 
+
 }
+
 
