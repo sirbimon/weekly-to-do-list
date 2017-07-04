@@ -5,6 +5,9 @@ class TaskViewController: UIViewController {
     let refreshControl = UIRefreshControl()
     let inputTaskView = InputTaskView()
     let store = DataStore.sharedInstance
+    
+    //populate the array with this:
+    var tasks = [String]()
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -46,7 +49,9 @@ class TaskViewController: UIViewController {
             print(task)
             firstItem.descriptor = task
             inputTaskView.layer.opacity = 0.0
+            tasks.append(task)
             refreshControl.endRefreshing()
+            self.tableView.reloadData()
         }
         store.saveContext()
         print("context has saved")
@@ -58,11 +63,13 @@ class TaskViewController: UIViewController {
 
 extension TaskViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return  UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
+        cell.textLabel?.text = tasks[indexPath.row]
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return tasks.count
     }
     
     
