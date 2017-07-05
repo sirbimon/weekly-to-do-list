@@ -10,7 +10,7 @@ class WeeklyViewController: UIViewController {
         if self.store.days.isEmpty{
             self.store.generateData()
         }
-        
+        self.navigationController?.navigationBar.tintColor = UIColor.clear
         
         setupGradientBG()
     }

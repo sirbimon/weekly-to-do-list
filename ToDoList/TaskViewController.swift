@@ -16,6 +16,8 @@ class TaskViewController: UIViewController {
         setupRefresh()
         setupInputTaskView()
         setupGradientBG()
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.clear
     }
 
 
