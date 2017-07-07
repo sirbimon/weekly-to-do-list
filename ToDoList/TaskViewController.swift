@@ -5,9 +5,9 @@ class TaskViewController: UIViewController {
     let refreshControl = UIRefreshControl()
     let inputTaskView = InputTaskView()
     let store = DataStore.sharedInstance
-    
+    var currentDay : Day!
     //populate the array with this:
-    var tasks = [String]()
+    var tasks = [Item]()
     
 
     @IBOutlet weak var tableView: UITableView!
@@ -17,12 +17,11 @@ class TaskViewController: UIViewController {
         setupTableView()
         setupGradientBG()
         setupInputHeader()
-        //setupRefresh()
-        //setupInputTaskView()
-        
-        //self.navigationController?.navigationBar.tintColor = UIColor.clear
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setupItems()
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -50,23 +49,6 @@ class TaskViewController: UIViewController {
         inputTaskView.addTaskButton.addTarget(self, action: #selector(finishCreatingTaskHeaderOption), for: .touchDown)
     }
     
-//    func setupRefresh() {
-//        refreshControl.addTarget(nil, action: #selector(refreshInitiated), for: .valueChanged)
-//        refreshControl.tintColor = .clear
-//        tableView.addSubview(refreshControl)
-//    }
-//    
-//    @objc func refreshInitiated() {
-//        print("pull refresh control")
-//        inputTaskView.taskTextLable.text = ""
-//        inputTaskView.layer.opacity = 1.0
-//    }
-    
-    func setupInputTaskView() {
-        refreshControl.addSubview(inputTaskView)
-        inputTaskView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: (refreshControl.frame.height))
-        inputTaskView.addTaskButton.addTarget(self, action: #selector(finishCreatingTask), for: .touchDown)
-    }
     
     func setupGradientBG() {
         let newLayer = CAGradientLayer()
@@ -78,22 +60,15 @@ class TaskViewController: UIViewController {
         view.layer.insertSublayer(newLayer, at: 0)
     }
     
-    
-    @objc func finishCreatingTask() {
-        let context  = store.persistentContainer.viewContext
-        let firstItem = Item(context: context)
-        if let task = inputTaskView.taskTextLable.text, task != "" {
-            print(task)
-            firstItem.descriptor = task
-            inputTaskView.layer.opacity = 0.0
-            tasks.append(task)
-            refreshControl.endRefreshing()
-            self.tableView.reloadData()
+    func setupItems() {
+        if let itemsInADay = currentDay.items {
+            let items = Array(itemsInADay) as! [Item]
+            tasks = items
+            print("tasks:", tasks.count)
         }
-        store.saveContext()
-        print("context has saved")
-        self.dismiss(animated: true, completion: nil)
+
     }
+    
     
     @objc func finishCreatingTaskHeaderOption() {
         let context  = store.persistentContainer.viewContext
@@ -101,9 +76,11 @@ class TaskViewController: UIViewController {
         if let task = inputTaskView.taskTextLable.text, task != "" {
             print(task)
             firstItem.descriptor = task
-            tasks.append(task)
+            tasks.append(firstItem)
+            currentDay.addToItems(firstItem)
             tableView.setContentOffset(CGPoint(x: 0, y: 80), animated: true)
             inputTaskView.taskTextLable?.text = ""
+            
             self.tableView.reloadData()
         }
         store.saveContext()
@@ -115,8 +92,10 @@ class TaskViewController: UIViewController {
 extension TaskViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
-        cell.textLabel?.text = tasks[indexPath.row]
         cell.textLabel?.textColor = UIColor.white
+        if let unwrappedTask = tasks[indexPath.row].descriptor {
+            cell.textLabel?.text = unwrappedTask
+        }
         return cell
     }
     

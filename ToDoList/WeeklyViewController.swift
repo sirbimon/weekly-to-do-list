@@ -49,7 +49,8 @@ extension WeeklyViewController: UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? TaskViewController {
             let indexPath = sender as! IndexPath
-            print(indexPath)
+            print(indexPath.row)
+            destination.currentDay = store.days[indexPath.row]
 
         }
     }
