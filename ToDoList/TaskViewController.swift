@@ -77,13 +77,13 @@ class TaskViewController: UIViewController {
 extension TaskViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
-        cell.textLabel?.text = tasks[indexPath.row]
+        cell.textLabel?.text = store.items[indexPath.row].descriptor
         cell.textLabel?.textColor = UIColor.white
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
+        return store.items.count
     }
     
     
