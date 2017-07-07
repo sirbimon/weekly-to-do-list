@@ -138,9 +138,9 @@
 		7B0365811F05832F0046D6A4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7B70347B1F05941200C768B7 /* TaskViewController.swift */,
 				E7C9AF051F06E7CB00415897 /* InputTaskView.swift */,
 				E735FF101F0C0B8900F542D1 /* DayCellView.swift */,
+				7B70347B1F05941200C768B7 /* TaskViewController.swift */,
 				7B03655E1F0582860046D6A4 /* WeeklyViewController.swift */,
 			);
 			name = View;
@@ -219,9 +219,8 @@
 					};
 					7B03656F1F0582860046D6A4 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 8X5723UG7D;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = 7B0365581F0582860046D6A4;
 					};
 				};
@@ -450,11 +449,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 8X5723UG7D;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ToDoListTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SejanMiah.ToDoListTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToDoList.app/ToDoList";
@@ -466,11 +466,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 8X5723UG7D;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ToDoListTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SejanMiah.ToDoListTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToDoList.app/ToDoList";

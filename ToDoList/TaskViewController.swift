@@ -8,16 +8,19 @@ class TaskViewController: UIViewController {
     
     //populate the array with this:
     var tasks = [String]()
+    
 
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupRefresh()
-        setupInputTaskView()
+        setupTableView()
         setupGradientBG()
+        setupInputHeader()
+        //setupRefresh()
+        //setupInputTaskView()
         
-        self.navigationController?.navigationBar.tintColor = UIColor.clear
+        //self.navigationController?.navigationBar.tintColor = UIColor.clear
     }
 
 
@@ -27,17 +30,37 @@ class TaskViewController: UIViewController {
         self.tableView.reloadData()
     }
     
-    func setupRefresh() {
-        refreshControl.addTarget(nil, action: #selector(refreshInitiated), for: .valueChanged)
-        refreshControl.tintColor = .clear
-        tableView.addSubview(refreshControl)
+    override func viewDidLayoutSubviews() {
+        let offset = CGPoint(x: 0, y: 80)
+        tableView.setContentOffset(offset, animated: false)
     }
     
-    @objc func refreshInitiated() {
-        print("pull refresh control")
-        inputTaskView.taskTextLable.text = ""
-        inputTaskView.layer.opacity = 1.0
+    @IBAction func backButtonPressed(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
+    
+    func setupTableView() {
+        //tableView.separatorColor = UIColor.clear
+    }
+    
+    func setupInputHeader() {
+        tableView.tableHeaderView = inputTaskView
+       // inputTaskView.backgroundColor = UIColor.blue
+        inputTaskView.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 80)
+        inputTaskView.addTaskButton.addTarget(self, action: #selector(finishCreatingTaskHeaderOption), for: .touchDown)
+    }
+    
+//    func setupRefresh() {
+//        refreshControl.addTarget(nil, action: #selector(refreshInitiated), for: .valueChanged)
+//        refreshControl.tintColor = .clear
+//        tableView.addSubview(refreshControl)
+//    }
+//    
+//    @objc func refreshInitiated() {
+//        print("pull refresh control")
+//        inputTaskView.taskTextLable.text = ""
+//        inputTaskView.layer.opacity = 1.0
+//    }
     
     func setupInputTaskView() {
         refreshControl.addSubview(inputTaskView)
@@ -70,6 +93,21 @@ class TaskViewController: UIViewController {
         store.saveContext()
         print("context has saved")
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func finishCreatingTaskHeaderOption() {
+        let context  = store.persistentContainer.viewContext
+        let firstItem = Item(context: context)
+        if let task = inputTaskView.taskTextLable.text, task != "" {
+            print(task)
+            firstItem.descriptor = task
+            tasks.append(task)
+            tableView.setContentOffset(CGPoint(x: 0, y: 80), animated: true)
+            inputTaskView.taskTextLable?.text = ""
+            self.tableView.reloadData()
+        }
+        store.saveContext()
+        print("context has saved")
     }
 
 }
