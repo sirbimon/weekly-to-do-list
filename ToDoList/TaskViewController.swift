@@ -27,11 +27,11 @@ class TaskViewController: UIViewController {
         super.viewWillAppear(animated)
         store.fetchData()
         self.tableView.reloadData()
+        offSetTableView()
     }
     
     override func viewDidLayoutSubviews() {
-        let offset = CGPoint(x: 0, y: 80)
-        tableView.setContentOffset(offset, animated: false)
+        offSetTableView()
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -65,8 +65,13 @@ class TaskViewController: UIViewController {
             let items = Array(itemsInADay) as! [Item]
             tasks = items
             print("tasks:", tasks.count)
+            tableView.reloadData()
         }
 
+    }
+    
+    func offSetTableView() {
+        
     }
     
     
