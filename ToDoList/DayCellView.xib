@@ -39,11 +39,19 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 Aug" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ea-ut-vPc">
+                            <rect key="frame" x="294.5" y="42.5" width="45.5" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="0Ea-ut-vPc" secondAttribute="trailing" constant="25" id="CIx-yv-EaY"/>
                         <constraint firstItem="vRJ-9i-JDW" firstAttribute="centerY" secondItem="9az-cf-Ise" secondAttribute="centerY" id="ELe-6Z-ux7"/>
                         <constraint firstItem="Wac-cz-H9w" firstAttribute="leading" secondItem="vRJ-9i-JDW" secondAttribute="trailing" constant="10" id="Goa-cj-stc"/>
+                        <constraint firstItem="0Ea-ut-vPc" firstAttribute="centerY" secondItem="9az-cf-Ise" secondAttribute="centerY" id="da9-I9-F7y"/>
                         <constraint firstItem="Wac-cz-H9w" firstAttribute="centerY" secondItem="vRJ-9i-JDW" secondAttribute="centerY" id="gzX-6j-ko2"/>
                         <constraint firstItem="vRJ-9i-JDW" firstAttribute="leading" secondItem="9az-cf-Ise" secondAttribute="leading" constant="20" id="sYo-s9-DLi"/>
                     </constraints>

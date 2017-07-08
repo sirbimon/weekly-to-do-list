@@ -9,6 +9,7 @@ class TaskViewController: UIViewController {
     //populate the array with this:
     var tasks = [Item]()
     
+    @IBOutlet weak var daylabel: UILabel!
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -64,6 +65,7 @@ class TaskViewController: UIViewController {
         if let itemsInADay = currentDay.items {
             let items = Array(itemsInADay) as! [Item]
             tasks = items
+            tasks = tasks.sorted(by: { $0.id > $1.id })
             print("tasks:", tasks.count)
             reloadTableView()
         }
@@ -83,7 +85,8 @@ class TaskViewController: UIViewController {
         if let task = inputTaskView.taskTextLable.text, task != "" {
             print(task)
             firstItem.descriptor = task
-            tasks.append(firstItem)
+            tasks.insert(firstItem, at: 0)
+            firstItem.id = Int64(tasks.count + 1)
             currentDay.addToItems(firstItem)
             inputTaskView.taskTextLable?.text = ""
             reloadTableView()
@@ -91,6 +94,7 @@ class TaskViewController: UIViewController {
         store.saveContext()
         print("context has saved")
     }
+    
 
 }
 

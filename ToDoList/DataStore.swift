@@ -55,8 +55,8 @@ class DataStore {
         for days in week {
             let day = Day(context: context)
             day.name = "\(days)"
-            let item = Item(context: context)
-            day.addToItems(item)
+//            let item = Item(context: context)
+//            day.addToItems(item)
             self.saveContext()
         }
         self.fetchData()
