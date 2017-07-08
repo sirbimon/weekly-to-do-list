@@ -26,12 +26,12 @@ class TaskViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         store.fetchData()
-        self.tableView.reloadData()
-        offSetTableView()
+        reloadTableView()
     }
     
     override func viewDidLayoutSubviews() {
-        offSetTableView()
+        let offset = CGPoint(x: 0, y: 80)
+        tableView.setContentOffset(offset, animated: false)
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -65,13 +65,15 @@ class TaskViewController: UIViewController {
             let items = Array(itemsInADay) as! [Item]
             tasks = items
             print("tasks:", tasks.count)
-            tableView.reloadData()
+            reloadTableView()
         }
 
     }
     
-    func offSetTableView() {
-        
+    func reloadTableView() {
+        tableView.reloadData()
+        let offset = CGPoint(x: 0, y: 80)
+        tableView.setContentOffset(offset, animated: false)
     }
     
     
@@ -83,10 +85,8 @@ class TaskViewController: UIViewController {
             firstItem.descriptor = task
             tasks.append(firstItem)
             currentDay.addToItems(firstItem)
-            tableView.setContentOffset(CGPoint(x: 0, y: 80), animated: true)
             inputTaskView.taskTextLable?.text = ""
-            
-            self.tableView.reloadData()
+            reloadTableView()
         }
         store.saveContext()
         print("context has saved")
