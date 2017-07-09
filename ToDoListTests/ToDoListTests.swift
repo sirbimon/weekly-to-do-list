@@ -1,11 +1,3 @@
-//
-//  ToDoListTests.swift
-//  ToDoListTests
-//
-//  Created by Sejan Miah on 6/29/17.
-//  Copyright © 2017 Sejan Miah. All rights reserved.
-//
-
 import XCTest
 @testable import ToDoList
 
