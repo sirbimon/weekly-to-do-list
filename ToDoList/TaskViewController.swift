@@ -18,16 +18,18 @@ class TaskViewController: UIViewController {
         setupTableView()
         setupGradientBG()
         setupInputHeader()
+        setupExtra()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        setupItems()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        setupItems()
+//    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         store.fetchData()
         reloadTableView()
+        setupItems()
     }
     
     override func viewDidLayoutSubviews() {
@@ -72,6 +74,10 @@ class TaskViewController: UIViewController {
 
     }
     
+    func setupExtra() {
+        daylabel.text = currentDay.name!.uppercased()
+    }
+    
     func reloadTableView() {
         tableView.reloadData()
         let offset = CGPoint(x: 0, y: 80)
@@ -113,4 +119,11 @@ extension TaskViewController: UITableViewDataSource {
     }
     
     
+}
+
+extension TaskViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        let editingStyle = UITableViewCellEditingStyle.delete
+        return editingStyle
+    }
 }
