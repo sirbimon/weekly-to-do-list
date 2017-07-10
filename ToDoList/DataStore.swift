@@ -63,10 +63,5 @@ class DataStore {
     }
 
 
-    func specifyDayPerItem(day: Day, item: Item) {
-        item.day = day
-        day.addToItems(item)
-    }
-
 }
 

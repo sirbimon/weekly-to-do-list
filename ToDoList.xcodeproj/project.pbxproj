@@ -13,7 +13,6 @@
 		7B0365671F0582860046D6A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B0365661F0582860046D6A4 /* Assets.xcassets */; };
 		7B03656A1F0582860046D6A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B0365681F0582860046D6A4 /* LaunchScreen.storyboard */; };
 		7B0365751F0582860046D6A4 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0365741F0582860046D6A4 /* ToDoListTests.swift */; };
-		7B70347A1F05935F00C768B7 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7034791F05935F00C768B7 /* Day.swift */; };
 		7B70347C1F05941200C768B7 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70347B1F05941200C768B7 /* TaskViewController.swift */; };
 		7B70347E1F097C4E00C768B7 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70347D1F097C4E00C768B7 /* DataStore.swift */; };
 		7B7034811F09AE0300C768B7 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B70347F1F09AE0300C768B7 /* DataModel.xcdatamodeld */; };
@@ -45,7 +44,6 @@
 		7B0365701F0582860046D6A4 /* ToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B0365741F0582860046D6A4 /* ToDoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTests.swift; sourceTree = "<group>"; };
 		7B0365761F0582860046D6A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7B7034791F05935F00C768B7 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		7B70347B1F05941200C768B7 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		7B70347D1F097C4E00C768B7 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		7B7034801F09AE0300C768B7 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 		7B0365801F0583260046D6A4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7B7034791F05935F00C768B7 /* Day.swift */,
 				7B70347D1F097C4E00C768B7 /* DataStore.swift */,
 				7B70347F1F09AE0300C768B7 /* DataModel.xcdatamodeld */,
 			);
@@ -279,7 +276,6 @@
 				7B70347C1F05941200C768B7 /* TaskViewController.swift in Sources */,
 				E735FF111F0C0B8900F542D1 /* DayCellView.swift in Sources */,
 				7B03655D1F0582860046D6A4 /* AppDelegate.swift in Sources */,
-				7B70347A1F05935F00C768B7 /* Day.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

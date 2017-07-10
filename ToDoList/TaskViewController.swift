@@ -85,7 +85,6 @@ class TaskViewController: UIViewController {
             currentDay.addToItems(firstItem)
             tableView.setContentOffset(CGPoint(x: 0, y: 80), animated: true)
             inputTaskView.taskTextLable?.text = ""
-            
             self.tableView.reloadData()
         }
         store.saveContext()
@@ -97,16 +96,15 @@ class TaskViewController: UIViewController {
 extension TaskViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
+        let tasks = Array(self.currentDay!.items!)
         cell.textLabel?.textColor = UIColor.white
-        if let unwrappedTask = tasks[indexPath.row].descriptor {
-            cell.textLabel?.text = unwrappedTask
-        }
+          cell.textLabel?.text = (tasks[indexPath.row] as AnyObject).descriptor
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
+        return self.currentDay!.items!.count
     }
     
-    
+
 }
