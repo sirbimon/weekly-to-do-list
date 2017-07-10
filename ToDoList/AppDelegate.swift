@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  ToDoList
-//
-//  Created by Sejan Miah on 6/29/17.
-//  Copyright © 2017 Sejan Miah. All rights reserved.
-//
-
 import UIKit
 import CoreData
 
