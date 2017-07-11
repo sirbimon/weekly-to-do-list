@@ -64,10 +64,11 @@ class TaskViewController: UIViewController {
         if let itemsInADay = currentDay.items {
             let items = Array(itemsInADay) as! [Item]
             tasks = items
+            tasks = tasks.sorted(by: { $0.id > $1.id })
             print("tasks:", tasks.count)
-            tableView.reloadData()
+            //reloadTableView()
         }
-
+        
     }
     
     func offSetTableView() {
