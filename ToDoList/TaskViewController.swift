@@ -110,7 +110,7 @@ extension TaskViewController: UITableViewDataSource {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             let tasks = Array(self.currentDay!.items!)
              let item  = tasks[indexPath.row] as! Item
-            print("The item \(item.descriptor!) is being deleted")
+            print("The item \(item.descriptor!.capitalized) is being deleted")
             store.deleteItem(item)
 
             DispatchQueue.main.async {
