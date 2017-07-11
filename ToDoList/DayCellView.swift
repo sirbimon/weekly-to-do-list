@@ -40,7 +40,7 @@ class DayCellView: UIView {
         cellView.layer.cornerRadius = 10
         cellView.layer.masksToBounds = false
         cellView.layer.shadowOffset = CGSize(width: 0, height: 4)
-        cellView.layer.shadowRadius = 4
+        cellView.layer.shadowRadius = 3
         cellView.layer.shadowOpacity = 0.3
         cellView.layer.shadowColor = UIColor.gray.cgColor
     }
