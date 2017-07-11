@@ -18,16 +18,12 @@ class TaskViewController: UIViewController {
         setupGradientBG()
         setupInputHeader()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        setupItems()
-    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         store.fetchData()
         self.tableView.reloadData()
-        reloadTableViewWithOffset()
+        setupItems()
     }
     
     override func viewDidLayoutSubviews() {
@@ -65,7 +61,10 @@ class TaskViewController: UIViewController {
             let items = Array(itemsInADay) as! [Item]
             tasks = items
             tasks = tasks.sorted(by: { $0.id > $1.id })
-            print("tasks:", tasks.count)
+            print("tasks:")
+            for (index, task) in tasks.enumerated() {
+                print(task.descriptor, "id:", task.id, "index:", index)
+            }
             reloadTableViewWithOffset()
         }
         
@@ -78,8 +77,7 @@ class TaskViewController: UIViewController {
     
     func reloadTableViewWithOffset() {
         tableView.reloadData()
-        let offset = CGPoint(x: 0, y: 80)
-        tableView.setContentOffset(offset, animated: false)
+        offSetTableView()
     }
     
     
@@ -87,13 +85,22 @@ class TaskViewController: UIViewController {
         let context  = store.persistentContainer.viewContext
         let firstItem = Item(context: context)
         if let task = inputTaskView.taskTextLable.text, task != "" {
-            print(task)
+            
             firstItem.descriptor = task
+            
+            if let id = tasks.first?.id {
+                firstItem.id = id + 1
+            } else {
+                firstItem.id = 0
+            }
+            
             tasks.insert(firstItem, at: 0)
+            
             currentDay.addToItems(firstItem)
-            tableView.setContentOffset(CGPoint(x: 0, y: 80), animated: true)
+
             inputTaskView.taskTextLable?.text = ""
-            reloadTableViewWithOffset()
+            print("the task:", firstItem.descriptor!, "id:", firstItem.id)
+            setupItems()
         }
         store.saveContext()
         print("context has saved")
@@ -104,9 +111,8 @@ class TaskViewController: UIViewController {
 extension TaskViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
-        let tasks = Array(self.currentDay!.items!)
         cell.textLabel?.textColor = UIColor.white
-          cell.textLabel?.text = (tasks[indexPath.row] as AnyObject).descriptor
+        cell.textLabel?.text = tasks[indexPath.row].descriptor!
         return cell
     }
     
