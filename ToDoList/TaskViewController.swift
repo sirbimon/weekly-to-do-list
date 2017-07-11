@@ -27,7 +27,7 @@ class TaskViewController: UIViewController {
         super.viewWillAppear(animated)
         store.fetchData()
         self.tableView.reloadData()
-        offSetTableView()
+        reloadTableViewWithOffset()
     }
     
     override func viewDidLayoutSubviews() {
@@ -66,13 +66,20 @@ class TaskViewController: UIViewController {
             tasks = items
             tasks = tasks.sorted(by: { $0.id > $1.id })
             print("tasks:", tasks.count)
-            //reloadTableView()
+            reloadTableViewWithOffset()
         }
         
     }
     
     func offSetTableView() {
-        
+        let offset = CGPoint(x: 0, y: 80)
+        tableView.setContentOffset(offset, animated: false)
+    }
+    
+    func reloadTableViewWithOffset() {
+        tableView.reloadData()
+        let offset = CGPoint(x: 0, y: 80)
+        tableView.setContentOffset(offset, animated: false)
     }
     
     
@@ -82,11 +89,11 @@ class TaskViewController: UIViewController {
         if let task = inputTaskView.taskTextLable.text, task != "" {
             print(task)
             firstItem.descriptor = task
-            tasks.append(firstItem)
+            tasks.insert(firstItem, at: 0)
             currentDay.addToItems(firstItem)
             tableView.setContentOffset(CGPoint(x: 0, y: 80), animated: true)
             inputTaskView.taskTextLable?.text = ""
-            self.tableView.reloadData()
+            reloadTableViewWithOffset()
         }
         store.saveContext()
         print("context has saved")
