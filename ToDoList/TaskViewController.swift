@@ -8,12 +8,14 @@ class TaskViewController: UIViewController {
     var currentDay : Day!
     //populate the array with this:
     var tasks = [Item]()
-    
+    var headerHeight: CGFloat = 50
 
+    @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
         setupTableView()
         setupGradientBG()
         setupInputHeader()
@@ -34,6 +36,10 @@ class TaskViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    func setupViews() {
+        dayLabel.text = currentDay.name?.uppercased()
+    }
+    
     func setupTableView() {
         //tableView.separatorColor = UIColor.clear
     }
@@ -41,7 +47,7 @@ class TaskViewController: UIViewController {
     func setupInputHeader() {
         tableView.tableHeaderView = inputTaskView
        // inputTaskView.backgroundColor = UIColor.blue
-        inputTaskView.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 80)
+        inputTaskView.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: headerHeight)
         inputTaskView.addTaskButton.addTarget(self, action: #selector(finishCreatingTaskHeaderOption), for: .touchDown)
     }
     
@@ -63,7 +69,7 @@ class TaskViewController: UIViewController {
             tasks = tasks.sorted(by: { $0.id > $1.id })
             print("tasks:")
             for (index, task) in tasks.enumerated() {
-                print(task.descriptor, "id:", task.id, "index:", index)
+                //print(task.descriptor, "id:", task.id, "index:", index)
             }
             reloadTableViewWithOffset()
         }
@@ -71,7 +77,7 @@ class TaskViewController: UIViewController {
     }
     
     func offSetTableView() {
-        let offset = CGPoint(x: 0, y: 80)
+        let offset = CGPoint(x: 0, y: headerHeight)
         tableView.setContentOffset(offset, animated: false)
     }
     

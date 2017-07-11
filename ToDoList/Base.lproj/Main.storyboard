@@ -82,8 +82,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nzf-QE-vbA">
-                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nzf-QE-vbA">
+                                <rect key="frame" x="0.0" y="102.5" width="375" height="564.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskCell" id="WdM-IF-SwN">
@@ -114,16 +114,18 @@
                                     <action selector="backButtonPressed:" destination="vI0-e6-5r9" eventType="touchUpInside" id="9Ze-XR-6H3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHs-aa-OQP">
-                                <rect key="frame" x="166" y="74" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MONDAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHs-aa-OQP">
+                                <rect key="frame" x="16" y="60" width="120" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.99656158685684204" green="0.57858312129974365" blue="0.013861800543963909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="xHs-aa-OQP" firstAttribute="top" secondItem="xOv-e2-JkX" secondAttribute="bottom" constant="40" id="88e-26-8dt"/>
+                            <constraint firstItem="xHs-aa-OQP" firstAttribute="leading" secondItem="7Mg-pq-beD" secondAttribute="leading" id="AAr-lH-JeU"/>
+                            <constraint firstItem="Nzf-QE-vbA" firstAttribute="top" secondItem="xHs-aa-OQP" secondAttribute="bottom" constant="10" id="F8R-PE-czm"/>
                             <constraint firstItem="7Mg-pq-beD" firstAttribute="top" secondItem="xOv-e2-JkX" secondAttribute="bottom" id="HqL-aU-woU"/>
                             <constraint firstItem="Nzf-QE-vbA" firstAttribute="leading" secondItem="0kc-v2-6PC" secondAttribute="leading" id="e4l-mb-eyS"/>
                             <constraint firstItem="Nzf-QE-vbA" firstAttribute="bottom" secondItem="40b-4W-Jjg" secondAttribute="top" id="i1M-aZ-Vpg"/>
@@ -136,6 +138,7 @@
                     </toolbarItems>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="dayLabel" destination="xHs-aa-OQP" id="mxY-PJ-3ld"/>
                         <outlet property="tableView" destination="Nzf-QE-vbA" id="2aE-bf-XPd"/>
                     </connections>
                 </viewController>
