@@ -62,6 +62,13 @@ class DataStore {
         self.fetchData()
     }
 
+    func deleteItem(_ item: Item) {
+        let context = persistentContainer.viewContext
+        context.delete(item)
+        saveContext()
+        fetchData()
+    }
+
 
 }
 

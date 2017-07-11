@@ -105,6 +105,19 @@ extension TaskViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.currentDay!.items!.count
     }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            let tasks = Array(self.currentDay!.items!)
+             let item  = tasks[indexPath.row] as! Item
+            print("The item \(item.descriptor!) is being deleted")
+            store.deleteItem(item)
+
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
 
 }
