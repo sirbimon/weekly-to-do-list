@@ -1,11 +1,3 @@
-//
-//  DayCellView.swift
-//  ToDoList
-//
-//  Created by Bimonaretga on 7/4/17.
-//  Copyright © 2017 Sejan Miah. All rights reserved.
-//
-
 import UIKit
 
 class DayCellView: UIView {
