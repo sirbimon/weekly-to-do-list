@@ -38,6 +38,10 @@ extension WeeklyViewController: UITableViewDataSource {
         view.frame = cell.contentView.frame
         view.dayLabel?.text = self.store.days[indexPath.row].name
         
+//        if indexPath.row < 4 {
+//            cell.contentView.layer.opacity = 0.5
+//        }
+        
         cell.selectionStyle = .none
         return cell
     }
