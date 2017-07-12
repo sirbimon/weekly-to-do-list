@@ -7,6 +7,7 @@ class DayCellView: UIView {
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupView()

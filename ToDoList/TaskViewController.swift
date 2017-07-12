@@ -5,11 +5,11 @@ class TaskViewController: UIViewController {
     let refreshControl = UIRefreshControl()
     let inputTaskView = InputTaskView()
     let store = DataStore.sharedInstance
-    var currentDay : Day!
+    var currentDay: Day!
     //populate the array with this:
     var tasks = [Item]()
+    var dayCell: DayCellView!
     var headerHeight: CGFloat = 50
-
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
@@ -101,16 +101,15 @@ class TaskViewController: UIViewController {
             }
             
             tasks.insert(firstItem, at: 0)
-            
             currentDay.addToItems(firstItem)
-
             inputTaskView.taskTextLable?.text = ""
             print("the task:", firstItem.descriptor!, "id:", firstItem.id)
             setupItems()
         }
         store.saveContext()
-        print("context has saved")
     }
+
+
 
 }
 
@@ -118,7 +117,7 @@ extension TaskViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
         cell.textLabel?.textColor = UIColor.white
-        cell.textLabel?.text = tasks[indexPath.row].descriptor!
+       cell.textLabel?.text = tasks[indexPath.row].descriptor ?? ""
         return cell
     }
     
