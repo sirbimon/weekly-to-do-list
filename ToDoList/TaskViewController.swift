@@ -129,9 +129,7 @@ extension TaskViewController: UITableViewDataSource {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
 
             let item  = tasks[indexPath.row]
-            print("The item \(item.descriptor!) is being deleted")
             store.deleteItem(item)
-
             DispatchQueue.main.async {
                 self.setupItems()
             }
