@@ -4,6 +4,8 @@ class WeeklyViewController: UIViewController {
 
     let store = DataStore.sharedInstance
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.store.fetchData()
@@ -15,6 +17,10 @@ class WeeklyViewController: UIViewController {
         setupGradientBG()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+    }
     
     func setupGradientBG() {
         let newLayer = CAGradientLayer()
@@ -37,10 +43,12 @@ extension WeeklyViewController: UITableViewDataSource {
         cell.contentView.addSubview(view)
         view.frame = cell.contentView.frame
         view.dayLabel?.text = self.store.days[indexPath.row].name
+        if let numOfTasks = self.store.days[indexPath.row].items?.count, numOfTasks != 0 {
+            view.remainingTaskLabel.text = "\(numOfTasks) tasks remaining."
+        } else {
+            view.remainingTaskLabel.text = ""
+        }
         
-//        if indexPath.row < 4 {
-//            cell.contentView.layer.opacity = 0.5
-//        }
         
         cell.selectionStyle = .none
         return cell

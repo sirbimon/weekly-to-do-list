@@ -53,6 +53,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="JX3-96-IM7"/>
                     <connections>
+                        <outlet property="tableView" destination="t8i-38-1uR" id="e2u-l2-v53"/>
                         <segue destination="vI0-e6-5r9" kind="show" identifier="taskSegue" id="avv-3Z-Nx1"/>
                     </connections>
                 </viewController>
