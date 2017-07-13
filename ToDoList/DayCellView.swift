@@ -5,7 +5,6 @@ class DayCellView: UIView {
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var sideDotView: UIView!
     @IBOutlet weak var cellView: UIView!
-    @IBOutlet weak var dateLabel: UILabel!
     
     
     required init?(coder aDecoder: NSCoder) {

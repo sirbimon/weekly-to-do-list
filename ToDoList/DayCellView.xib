@@ -13,7 +13,6 @@
             <connections>
                 <outlet property="cellView" destination="9az-cf-Ise" id="6tz-X7-QSb"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="XM6-vh-n4j"/>
-                <outlet property="dateLabel" destination="H7z-Wn-OEm" id="DvI-TS-ulz"/>
                 <outlet property="dayLabel" destination="Wac-cz-H9w" id="zaa-xP-E8p"/>
                 <outlet property="sideDotView" destination="vRJ-9i-JDW" id="Gc7-fd-Y0Y"/>
             </connections>
@@ -40,12 +39,6 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jan 18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7z-Wn-OEm">
-                            <rect key="frame" x="287.5" y="47.5" width="52.5" height="19.5"/>
-                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEg-lv-E2W">
                             <rect key="frame" x="104" y="47.5" width="32" height="20"/>
                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
@@ -55,8 +48,6 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="H7z-Wn-OEm" secondAttribute="trailing" constant="25" id="3Wt-X5-zKJ"/>
-                        <constraint firstItem="H7z-Wn-OEm" firstAttribute="centerY" secondItem="9az-cf-Ise" secondAttribute="centerY" id="DCg-Hb-AV6"/>
                         <constraint firstItem="vRJ-9i-JDW" firstAttribute="centerY" secondItem="9az-cf-Ise" secondAttribute="centerY" id="ELe-6Z-ux7"/>
                         <constraint firstItem="Wac-cz-H9w" firstAttribute="leading" secondItem="vRJ-9i-JDW" secondAttribute="trailing" constant="10" id="Goa-cj-stc"/>
                         <constraint firstItem="Wac-cz-H9w" firstAttribute="centerY" secondItem="vRJ-9i-JDW" secondAttribute="centerY" id="gzX-6j-ko2"/>
