@@ -113,17 +113,47 @@ class TaskViewController: UIViewController {
 
 }
 
+extension TaskViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        switch tasks.isEmpty {
+        case true:
+            return 80.0
+        default:
+            return 28.0
+        }
+    }
+}
+
 extension TaskViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
-        cell.textLabel?.textColor = UIColor.white
-       cell.textLabel?.text = tasks[indexPath.row].descriptor ?? ""
-        return cell
+        switch tasks.isEmpty {
+        case true:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "noTaskCell", for: indexPath)
+            tableView.separatorColor = UIColor.clear
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
+            cell.textLabel?.textColor = UIColor.white
+            tableView.separatorColor = UIColor.white
+            cell.textLabel?.text = tasks[indexPath.row].descriptor ?? ""
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.currentDay!.items!.count
+        
+        switch tasks.isEmpty {
+        case true:
+            return 1
+        default:
+            return self.currentDay!.items!.count
+        }
+
+        
+        
     }
+    
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {

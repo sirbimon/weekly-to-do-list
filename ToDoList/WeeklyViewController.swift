@@ -38,6 +38,9 @@ class WeeklyViewController: UIViewController {
 extension WeeklyViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        
         let view = DayCellView()
         let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath)
         cell.contentView.addSubview(view)
@@ -66,6 +69,7 @@ extension WeeklyViewController: UITableViewDataSource {
 
         }
     }
+    
 }
 
 extension WeeklyViewController: UITableViewDelegate {
