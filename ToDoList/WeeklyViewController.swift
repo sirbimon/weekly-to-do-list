@@ -3,6 +3,7 @@ import UIKit
 class WeeklyViewController: UIViewController {
 
     let store = DataStore.sharedInstance
+    let vm = WeeklyViewModel()
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -37,32 +38,38 @@ class WeeklyViewController: UIViewController {
 
 extension WeeklyViewController: UITableViewDataSource {
 
+        // I AM IN ANOTHER FILE
+//    func getTaskLabel(index: Int) -> String {
+//        if let numOfTasks = self.store.days[index].items?.count, numOfTasks != 0 {
+//            return "\(numOfTasks) tasks remaining."
+//        } else {
+//            return ""
+//        }
+//    }
+
+
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let view = DayCellView()
         let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath)
         cell.contentView.addSubview(view)
         view.frame = cell.contentView.frame
-        view.dayLabel?.text = self.store.days[indexPath.row].name
-        if let numOfTasks = self.store.days[indexPath.row].items?.count, numOfTasks != 0 {
-            view.remainingTaskLabel.text = "\(numOfTasks) tasks remaining."
-        } else {
-            view.remainingTaskLabel.text = ""
-        }
-        
+        view.dayLabel?.text = vm.generateDayLabelText(index: indexPath.row)
+        view.remainingTaskLabel.text = vm.getTaskCount(index: indexPath.row)
         
         cell.selectionStyle = .none
         return cell
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.store.days.count
+        return vm.store.days.count
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? TaskViewController {
             let indexPath = sender as! IndexPath
             print(indexPath.row)
-            destination.currentDay = store.days[indexPath.row]
+            destination.currentDay = vm.store.days[indexPath.row]
 
         }
     }
