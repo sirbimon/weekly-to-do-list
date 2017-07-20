@@ -3,9 +3,11 @@ import Foundation
 class WeeklyViewModel {
 let store = DataStore.sharedInstance
 
-
     func generateData() {
         self.store.fetchData()
+    }
+
+    func checkIfDataExists() {
         if self.store.days.isEmpty{
             self.store.generateData()
         }

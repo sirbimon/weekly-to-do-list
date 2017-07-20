@@ -2,17 +2,15 @@ import UIKit
 
 class WeeklyViewController: UIViewController {
 
-    let store = DataStore.sharedInstance
+//    let store = DataStore.sharedInstance
     let vm = WeeklyViewModel()
 
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.store.fetchData()
-        if self.store.days.isEmpty{
-            self.store.generateData()
-        }
+        self.vm.generateData()
+        self.vm.checkIfDataExists()
         self.navigationController?.navigationBar.tintColor = UIColor.clear
         
         setupGradientBG()
@@ -78,7 +76,7 @@ extension WeeklyViewController: UITableViewDataSource {
 extension WeeklyViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return tableView.frame.height/CGFloat(self.store.days.count)
+        return tableView.frame.height/CGFloat(self.vm.store.days.count)
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

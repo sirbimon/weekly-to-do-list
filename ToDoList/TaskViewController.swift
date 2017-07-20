@@ -4,6 +4,7 @@ class TaskViewController: UIViewController {
     
     let refreshControl = UIRefreshControl()
     let inputTaskView = InputTaskView()
+    let vm = WeeklyViewModel()
     let store = DataStore.sharedInstance
     var currentDay: Day!
     //populate the array with this:
@@ -23,7 +24,7 @@ class TaskViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        store.fetchData()
+        vm.generateData()
         self.tableView.reloadData()
         setupItems()
     }
