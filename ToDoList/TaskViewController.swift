@@ -46,7 +46,6 @@ class TaskViewController: UIViewController {
     
     func setupGradientBG() {
         let newLayer = CAGradientLayer()
-        print("setupgradientBG")
         let pink = UIColor(hex: 0xFFA3A3)
         let purple = UIColor(hex: 0xA3AEFB)
         newLayer.colors = [purple.cgColor, pink.cgColor]
