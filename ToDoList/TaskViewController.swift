@@ -20,7 +20,7 @@ class TaskViewController: UIViewController {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
         vm.setupItems(completion: reloadTableViewWithOffset)
-        self.dayLabel.text = vm.currentDay.name
+        setupDayLabel()
     }
     
     override func viewDidLayoutSubviews() {
@@ -29,6 +29,11 @@ class TaskViewController: UIViewController {
     
     @IBAction func backButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+
+    func setupDayLabel() {
+        self.dayLabel.text = vm.currentDay.name
+
     }
 
     
