@@ -1,7 +1,10 @@
 import Foundation
 
 class WeeklyViewModel {
-let store = DataStore.sharedInstance
+    let store = DataStore.sharedInstance
+//    var currentDay: Day!
+    var tasks = [Item]()
+    let inputTaskView = InputTaskView()
 
     func generateData() {
         self.store.fetchData()

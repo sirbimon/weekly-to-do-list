@@ -13,10 +13,11 @@
 		7B0365671F0582860046D6A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B0365661F0582860046D6A4 /* Assets.xcassets */; };
 		7B03656A1F0582860046D6A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B0365681F0582860046D6A4 /* LaunchScreen.storyboard */; };
 		7B0365751F0582860046D6A4 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0365741F0582860046D6A4 /* ToDoListTests.swift */; };
+		7B370A821F21184F0056CF07 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B370A811F21184F0056CF07 /* TaskViewModel.swift */; };
 		7B70347C1F05941200C768B7 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70347B1F05941200C768B7 /* TaskViewController.swift */; };
 		7B70347E1F097C4E00C768B7 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B70347D1F097C4E00C768B7 /* DataStore.swift */; };
 		7B7034811F09AE0300C768B7 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B70347F1F09AE0300C768B7 /* DataModel.xcdatamodeld */; };
-		7BE87E091F20FCC100567098 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE87E081F20FCC100567098 /* ViewModel.swift */; };
+		7BE87E091F20FCC100567098 /* WeeklyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE87E081F20FCC100567098 /* WeeklyViewModel.swift */; };
 		E735FF0F1F0C0B3B00F542D1 /* DayCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E735FF0E1F0C0B3B00F542D1 /* DayCellView.xib */; };
 		E735FF111F0C0B8900F542D1 /* DayCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735FF101F0C0B8900F542D1 /* DayCellView.swift */; };
 		E735FF141F0C2CF800F542D1 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735FF131F0C2CF800F542D1 /* UIColorExt.swift */; };
@@ -45,10 +46,11 @@
 		7B0365701F0582860046D6A4 /* ToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B0365741F0582860046D6A4 /* ToDoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTests.swift; sourceTree = "<group>"; };
 		7B0365761F0582860046D6A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B370A811F21184F0056CF07 /* TaskViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		7B70347B1F05941200C768B7 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		7B70347D1F097C4E00C768B7 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		7B7034801F09AE0300C768B7 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
-		7BE87E081F20FCC100567098 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		7BE87E081F20FCC100567098 /* WeeklyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyViewModel.swift; sourceTree = "<group>"; };
 		E735FF0E1F0C0B3B00F542D1 /* DayCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayCellView.xib; sourceTree = "<group>"; };
 		E735FF101F0C0B8900F542D1 /* DayCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCellView.swift; sourceTree = "<group>"; };
 		E735FF131F0C2CF800F542D1 /* UIColorExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
@@ -121,7 +123,8 @@
 		7B03657F1F0583000046D6A4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				7BE87E081F20FCC100567098 /* ViewModel.swift */,
+				7BE87E081F20FCC100567098 /* WeeklyViewModel.swift */,
+				7B370A811F21184F0056CF07 /* TaskViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -272,8 +275,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B70347E1F097C4E00C768B7 /* DataStore.swift in Sources */,
-				7BE87E091F20FCC100567098 /* ViewModel.swift in Sources */,
+				7BE87E091F20FCC100567098 /* WeeklyViewModel.swift in Sources */,
 				E7C9AF061F06E7CB00415897 /* InputTaskView.swift in Sources */,
+				7B370A821F21184F0056CF07 /* TaskViewModel.swift in Sources */,
 				7B03655F1F0582860046D6A4 /* WeeklyViewController.swift in Sources */,
 				7B7034811F09AE0300C768B7 /* DataModel.xcdatamodeld in Sources */,
 				E735FF141F0C2CF800F542D1 /* UIColorExt.swift in Sources */,

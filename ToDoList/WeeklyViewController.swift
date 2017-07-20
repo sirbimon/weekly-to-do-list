@@ -2,7 +2,6 @@ import UIKit
 
 class WeeklyViewController: UIViewController {
 
-//    let store = DataStore.sharedInstance
     let vm = WeeklyViewModel()
 
     @IBOutlet weak var tableView: UITableView!
@@ -36,17 +35,6 @@ class WeeklyViewController: UIViewController {
 
 extension WeeklyViewController: UITableViewDataSource {
 
-        // I AM IN ANOTHER FILE
-//    func getTaskLabel(index: Int) -> String {
-//        if let numOfTasks = self.store.days[index].items?.count, numOfTasks != 0 {
-//            return "\(numOfTasks) tasks remaining."
-//        } else {
-//            return ""
-//        }
-//    }
-
-
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let view = DayCellView()
         let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath)
@@ -67,7 +55,7 @@ extension WeeklyViewController: UITableViewDataSource {
         if let destination = segue.destination as? TaskViewController {
             let indexPath = sender as! IndexPath
             print(indexPath.row)
-            destination.currentDay = vm.store.days[indexPath.row]
+            destination.vm.currentDay = self.vm.store.days[indexPath.row]
 
         }
     }
