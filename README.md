@@ -1,7 +1,7 @@
 
 # Welcome To Weeklyst!
 
-!https://media.giphy.com/media/xUPGGdbNukwiaiXYv6/giphy.gif
+![](https://media.giphy.com/media/xUPGGdbNukwiaiXYv6/giphy.gif)
 
 ## For Users
 
