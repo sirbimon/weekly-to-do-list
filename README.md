@@ -52,3 +52,5 @@ func generateNumberOfRows(_ currentDay: Day)-> Int {
 
 '''
 We realize that some of these functions will not actually save some space in the VC, because these are short concise code that won't change , but we wanted to fully commit to the VM design pattern and port as many code into the VM as a beginning template so we can probably expand more functionality into it at a later date.
+
+Creating custom views was a gamechanger, we abstracted out a lot of the UI setup process needed to execute custom UI. creating a lot of objects and using Stackviews are possible when using Xibs, thereby removing massive overhead and get's the app up and running as soon as we can.
