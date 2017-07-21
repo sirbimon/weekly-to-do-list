@@ -26,6 +26,29 @@ CoreData as the model layer has to have some error handling and data handling be
 There's differing opinions on how to apply MVVM in the application, we opted to use a VM that contains functions that takes care of the business logic and view logic for us using view model methods that we supply arguments and return the relevant object to us.
 
 '''swift
+//using the selected day that's contained inside the VM, we call this function inside VC, that returns an Int that tells the VC how much rows should the tableview generate based on the data that is contained inside the VC using the logic inside the VM.
 
+func generateNumberOfRows(_ currentDay: Day)-> Int {
+     let unwrappedItems = self.currentDay.items?.count ?? 0
+     return unwrappedItems
+ }
+
+ //using the setupViews function, we pass in the current day that's contained inside the VC, passing it to the VM and the VM logic returns the formatted string.
+
+ func setupViews(_ currentDay: Day)-> String {
+     return currentDay.name?.uppercased() ?? ""
+ }
+
+//when we needed to handle changing data then reloading the tableviews, we needed a clear order of operations that warranted two functions to be executed separately. so we added a closure and passed a function into the closure. In this case, we wanted the VM to reorder the data, then when the process was complete, the tableview is reloaded using the closure.
+
+ func setupItems(completion: ()-> ()) {
+     if let itemsInADay = self.currentDay.items {
+         let items = Array(itemsInADay) as! [Item]
+         tasks = items
+         tasks = tasks.sorted(by: { $0.id > $1.id })
+     }
+     completion()
+ }
 
 '''
+We realize that some of these functions will not actually save some space in the VC, because these are short concise code that won't change , but we wanted to fully commit to the VM design pattern and port as many code into the VM as a beginning template so we can probably expand more functionality into it at a later date.
