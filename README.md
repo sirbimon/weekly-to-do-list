@@ -14,14 +14,14 @@ Weeklyst is available in the Appstore. Just download from the appstore and start
 
 Weeklyst is created using native Apple SDK, just download and run!
 
-## Technologies
+### Technologies
 
 We used mainly 3 main things to create the Weeklyst experience:
 1.  Retaining state between app usage with CoreData
 2.  Shrinking the ViewController code using MVVM
 3.  Creating custom views using both Xibs and programmatic custom UIView subclassing.
 
-## Lessons Learned
+### Lessons Learned
 
 CoreData as the model layer has to have some error handling and data handling because of the . A possible way to solve this is treating CoreData as a back end or a server. Utilizing handlers to request and save to core data and map that model into a struct. It might need some syncing through that handler to sync the data for every action taken. We haven't solved this problem fully, and will update once we think of a better handler for core data.
 
@@ -55,4 +55,9 @@ func generateNumberOfRows(_ currentDay: Day)-> Int {
 ```
 We realize that some of these functions will not actually save some space in the VC, because these are short concise code that won't change , but we wanted to fully commit to the VM design pattern and port as many code into the VM as a beginning template so we can probably expand more functionality into it at a later date.
 
-Creating custom views was a gamechanger, we abstracted out a lot of the UI setup process needed to execute custom UI. creating a lot of objects and using Stackviews are possible when using Xibs, thereby removing massive overhead and get's the app up and running as soon as we can.
+Using custom views was a gamechanger, we abstracted out a lot of the UI setup process needed to execute custom UI. creating a lot of objects and using Stackviews became a possibility when using Xibs, thereby removing massive overhead and get's the app up and running as soon as we can.
+
+## See Also
+Lickability's [View on View Models](https://blog.lickability.com/our-view-on-view-models-4bb1d0675038)
+
+TJ Carney's [What’s a XIB and Why Would I Ever Use One?](https://medium.com/@tjcarney89/whats-a-xib-and-why-would-i-ever-use-one-58d608cd5e9b)
