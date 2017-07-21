@@ -77,7 +77,7 @@ extension TaskViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
         cell.textLabel?.textColor = UIColor.white
-       cell.textLabel?.text = vm.tasks[indexPath.row].descriptor ?? ""
+        cell.textLabel?.text = vm.tasks[indexPath.row].descriptor ?? ""
         return cell
     }
     
