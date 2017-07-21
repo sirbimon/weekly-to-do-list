@@ -3,9 +3,6 @@
 
 ![](https://media.giphy.com/media/xUPGGdbNukwiaiXYv6/giphy.gif)
 
-<div style="text-align:center"><img src ="https://media.giphy.com/media/xUPGGdbNukwiaiXYv6/giphy.gif
-" /></div>
-
 ## For Users
 
 Weeklyst is an iOS application that helps you manage what you need to accomplish throughout the week. Add, delete and update your task list and become efficient so you can live your best life!
