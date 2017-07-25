@@ -23,7 +23,7 @@ We used mainly 3 main things to create the Weeklyst experience:
 
 ### Lessons Learned
 
-CoreData as the model layer has to have some error handling and data handling because of the . A possible way to solve this is treating CoreData as a back end or a server. Utilizing handlers to request and save to core data and map that model into a struct. It might need some syncing through that handler to sync the data for every action taken. We haven't solved this problem fully, and will update once we think of a better handler for core data.
+CoreData as the model layer has to have some error handling and data handling because relational data in CoreData aren't stored as an array, it's stored as a Set. A possible way to solve this is treating CoreData as a back end or a server, then utilizing handlers to request and save to core data and map that model into a struct. It might need some syncing through that handler to sync the data for every action taken. We haven't solved this problem fully, and will update once we think of a better handler for core data.
 
 There's differing opinions on how to apply MVVM in the application, we opted to use a VM that contains functions that takes care of the business logic and view logic for us using view model methods that we supply arguments and return the relevant object to us.
 
